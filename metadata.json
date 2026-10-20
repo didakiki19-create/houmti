@@ -1,0 +1,10 @@
+{
+  "name": "Hoomty - Mon Quartier Digital",
+  "description": "Plateforme de proximité pour tous les commerces de quartier algériens (Boulangerie, Cosmétiques, Quincaillerie, Pizzeria, Supérettes). Commandez dans votre Houma en un clic.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

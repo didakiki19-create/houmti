@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-arabic: "Noto Sans Arabic", sans-serif;
+  
+  --color-primary: #059669;
+  --color-primary-light: #10B981;
+  --color-accent: #F59E0B;
+  --color-dark: #0F172A;
+  --color-light: #F8FAFC;
+  --color-error: #EF4444;
+  --color-slate-950: #020617;
+
+  --radius-3xl: 1.5rem;
+  --radius-4xl: 2.5rem;
+  --radius-5xl: 4rem;
+
+  --animate-float: float 3s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-light text-dark antialiased overflow-x-hidden;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .font-arabic {
+    @apply font-arabic;
+  }
+}
+
+@layer components {
+  .glass-header {
+    @apply bg-white/70 backdrop-blur-xl dark:bg-slate-950/70;
+  }
+
+  .shadow-premium {
+    box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.05);
+  }
+
+  .shadow-inner-soft {
+    box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.02);
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.5rem;
+  z-index: 1;
+}
+
+/* Custom Leaflet Dark Mode */
+.dark .leaflet-tile {
+  filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+}
+
+.dark .leaflet-container {
+  background: #0f172a;
+}
